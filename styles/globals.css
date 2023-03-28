@@ -1,3 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@layer base {
+  html {
+      scroll-behavior: smooth;
+      font-family: rubik, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    
+    }
+}
 html,
 body {
   padding: 0;
@@ -14,3 +29,156 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.anim-1 {
+  animation: scale1 4000ms infinite ease-in-out forwards;
+}
+.anim-2 {
+  animation: scale2 5000ms infinite ease-in-out forwards;
+}
+.anim-3 {
+  animation: scale3 6500ms infinite ease-in-out forwards;
+}
+
+@-webkit-keyframes scale1 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translate(60px, -10px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale1 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translate(60px, -10px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scale2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translate(10px, -20px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale2 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translate(10px, -20px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scale3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translate(10px, 30px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale3 {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2) translate(10px, 30px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+
+.tracker:hover .tracker-child {
+  display: flex;
+  opacity: 0;
+  animation: fadeIn 0.5s linear forwards;
+  /* 'forwards' will maintain the end state of the animation (opacity: 1) after it ends */
+}
+
+
+.tracker:not(:hover) .tracker-child {
+  display: flex;
+  opacity: 1;
+  animation: fadeOut 0.5s linear forwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px); /* added to slide the element down smoothly */
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); /* added to slide the element down smoothly */
+      background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateY(0); /* added to slide the element up smoothly */
+      background-color: rgba(0, 0, 0, 0.7);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(-10px); /* added to slide the element up smoothly */
+      background-color: rgba(0, 0, 0, 0);
+      display: none; /* added to hide the element after the animation is complete */
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0c1624;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #198794;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #38acad;
+}
+
+ul li {
+  list-style-type: circle;
+}
+
