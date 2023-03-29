@@ -41,7 +41,7 @@ const Portfolio = ({
                     <div className="w-full h-full hidden mx-auto my-auto items-center justify-center z-20 absolute top-0 right-0 bottom-0 tracker-child left-0">
                         <div className="flex flex-col items-center justify-center mx-auto my-auto absolute top-0 right-0 bottom-0 left-0">
                             <p className="font-rubik font-[400] text-sm text-center uppercase text-[#aaaaaa]">Web Design</p>
-                            <h2 className="text-white font-poppins font-[600] text-base uppercase mt-2 mb-3">{portfolio.title}</h2>
+                            <h2 className="text-white font-poppins font-[600] lg:text-base text-sm text-center uppercase mt-2 mb-3">{portfolio.title}</h2>
                             <div className="border-b-4 border-secondary w-[4rem]"></div>
                         </div>
                     </div>

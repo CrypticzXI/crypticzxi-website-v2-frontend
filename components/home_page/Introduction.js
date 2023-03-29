@@ -11,9 +11,9 @@ const Introduction = ({ properties }) => {
           <div className='h-36 aspect-square bg-secondary rounded-full left-[60rem] top-[15rem] absolute anim-3'></div>
         </div>
 
-        <div className='z-10 h-full w-full grid lg:grid-cols-2 lg:grid-rows-1 grid-rows-1 grid-cols-1 xl:px-40 lg:px-20 md:px-20 px-8'>
+        <div className='z-10 h-full w-full grid lg:grid-cols-2 lg:grid-rows-1 grid-rows-1 grid-cols-1 xl:px-40 lg:px-20 md:px-20 px-4'>
 
-          <div className='w-full p-8 aspect-square flex items-center justify-start row-start-2 row-end-2 lg:row-start-1 lg:row-end-1'>
+          <div className='w-full md:p-8 aspect-square flex items-center justify-start row-start-2 row-end-2 lg:row-start-1 lg:row-end-1'>
             <div className='flex flex-col'>
               <h2 className='lg:text-4xl text-3xl font-rubik font-[600] tracking-tight uppercase text-white'>Daniel Poulton</h2>
               <div className='border-b-[1px] border-primary lg:w-[18.5rem] w-[15.4rem] mt-2'></div>

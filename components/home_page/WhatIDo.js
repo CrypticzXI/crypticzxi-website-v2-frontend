@@ -2,12 +2,12 @@
 const WhatIDo = ({ properties }) => {
     return (
         <div className=' my-auto flex items-center z-[10]'>
-        <div className='w-full lg:h-[50%] h-full transition-all flex lg:flex-row flex-col xl:px-60 lg:px-10 md:px-40 px-6 items-center justify-center'>
+        <div className='w-full lg:h-[50%] h-full transition-all flex lg:flex-row flex-col xl:px-60 lg:px-10 md:px-40 px-4 items-center justify-center'>
 
-          <div className='w-full h-full lg:p-16 p-8 flex lg:items-center lg:justify-center relative'>
+          <div className='w-full h-full lg:p-16 md:p-8 flex lg:items-center lg:justify-center relative'>
             <div className='flex flex-col relative'>
               <h2 className='md:text-4xl text-2xl font-rubik font-[600] tracking-tight uppercase text-secondary'>What I do</h2>
-              <div className='flex space-x-3 md:text-2xl text-lg font-rubik text-white font-[500] mt-7'>
+              <div className='flex space-x-3 md:text-2xl text-lg font-rubik text-white font-[500] lg:mt-7 mt-4'>
                 I'm a Versatile Developer Creating Games, Software, and Websites with Expertise and Innovation.
               </div>
               <div className='flex mt-7 items-center lg:pb-[20rem]'>
@@ -17,7 +17,7 @@ const WhatIDo = ({ properties }) => {
               </div>
             </div>
           </div>
-          <div className='w-full h-full lg:p-16 p-8 flex lg:items-center lg:justify-center'>
+          <div className='w-full h-full lg:p-16 md:p-8 flex lg:items-center lg:justify-center md:mt-0 mt-7'>
             <div className='flex flex-col space-y-10 items-center justify-center'>
 
               <div className='flex border-primary border-b-[1px] pb-8'>

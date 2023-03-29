@@ -11,19 +11,19 @@ const MyLatestWork = ({ portfoliodata }) => {
         </div>
 
 
-        <div className='h-full w-full flex lg:flex-row flex-col xl:px-40 lg:px-10 md:px-40 px-6 py-8 z-10'>
-        <div className='w-full h-full p-8'>
+        <div className='h-full w-full flex lg:flex-row flex-col xl:px-40 lg:px-10 md:px-40 px-4 py-8 z-10'>
+        <div className='w-full h-full lg:p-8'>
             <div className='grid lg:grid-cols-2 lg:grid-rows-2 w-full gap-8 grid-rows-4 grid-cols-1'>
 
-            <div className='w-full aspect-video flex flex-col justify-between p-8 xl:pr-40'>
+            <div className='w-full aspect-video flex flex-col lg:p-8 xl:pr-40'>
                 <div className='flex flex-col'>
-                    <h2 className='text-4xl font-rubik font-[600] tracking-tight uppercase text-secondary'>My Latest Work</h2>
-                    <div className='space-x-3 text-lg font-rubik text-white font-[400] mt-7 break-words'>
+                    <h2 className='lg:text-4xl text-xl font-rubik font-[600] tracking-tight uppercase text-secondary'>My Latest Work</h2>
+                    <div className='space-x-3 lg:text-lg text-xs font-rubik text-white font-[400] lg:mt-7 mt-4 break-words'>
                     I am always striving to improve the quality of my work, and I value your opinion on my latest project. Please take a look at my work and share your thoughts on how I can enhance it further.
                     </div>
                 </div>
-                <div className='flex items-center'>
-                    <a href='#' className='bg-primary text-sm text-white font-rubik py-[0.35rem] px-6 rounded-full transition-all bg-gradient-to-r hover:text-primary focus:text-primary border-primary border-2 hover:bg-transparent focus:bg-transparent'>
+                <div className='flex items-center mt-5'>
+                    <a href='/portfolio/' className='bg-primary text-sm text-white font-rubik py-[0.35rem] px-6 rounded-full transition-all bg-gradient-to-r hover:text-primary focus:text-primary border-primary border-2 hover:bg-transparent focus:bg-transparent'>
                     See my work
                     </a>
                 </div>
