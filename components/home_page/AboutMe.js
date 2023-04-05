@@ -41,7 +41,7 @@ const AboutMe = ({ properties }) => {
                     <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                       {({ isVisible }) => (
                         <div>
-                          {isVisible ? <CountUp className='lg:text-2xl text-lg font-poppins font-[800] text-primary' end={4} duration={3} /> : <p className="text-2xl font-poppins font-[800] text-primary">0</p>}
+                          {isVisible ? <CountUp className='lg:text-2xl text-lg font-poppins font-[800] text-primary' end={7} duration={3} /> : <p className="text-2xl font-poppins font-[800] text-primary">0</p>}
                         </div>
                       )}
                     </VisibilitySensor>
