@@ -4,6 +4,7 @@ import Router from 'next/router'
 import Head from 'next/head'
 import Typewriter from 'typewriter-effect';
 import {Header, Links, PortableText} from '../../components';
+import moment from 'moment'
 
 
 const portfolio = ({ 
@@ -16,6 +17,7 @@ const portfolio = ({
   desc,
   file,
   FileURL,
+  posted,
 }) => {
   var Filesize = formatSizeUnits(FileURL?.size)
   // var Image0 = urlFor(images[0])
@@ -61,6 +63,7 @@ const portfolio = ({
 
           <div className="w-full h-full z-10 xl:px-40 lg:px-20 md:px-20 px-8 flex flex-col items-start justify-start">
             <h2 className='lg:text-4xl text-3xl font-rubik font-[600] tracking-tight uppercase text-white'>Porfolio Work</h2>
+            <span className="text-sm font-rubik font-[400] tracking-tight text-white my-2">{posted}</span>
             <div className='border-b-[1px] border-primary lg:w-[18.5rem] w-[15.4rem] mt-2'></div>
             <div className='flex space-x-3 lg:text-2xl text-xl font-poppins uppercase text-secondary font-[200] mt-2'>
               <p className='text-white font-[400]'>{portfolio.title}</p>
@@ -113,6 +116,7 @@ export const getServerSideProps = async (pageContext) => {
     title,
     thumbnail,
     description,
+    date,
     slug,
     file,
     owninguser->{
@@ -168,7 +172,7 @@ export const getServerSideProps = async (pageContext) => {
   if (!fileinfo) {
     fileinfo = null
   }
-
+  const datetime = moment(portfolio.date).format(("dddd, MMMM Do YYYY, h:mma"));
   return {
     props: {
       portfolio: raw_portfolio,
@@ -179,7 +183,8 @@ export const getServerSideProps = async (pageContext) => {
       user: owninguser,
       desc: description,
       file: file,
-      FileURL: fileinfo
+      FileURL: fileinfo,
+      posted: datetime
     }
   }
 }

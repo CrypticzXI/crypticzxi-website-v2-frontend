@@ -2,7 +2,7 @@ const Header = () => {
     return (
         <div className='w-full h-20 bg-secondarybackground fixed z-[999] flex xl:px-20 lg:px-20 md:px-10 px-8 border-b-[1px] border-primary'>
             <div className="h-full w-[40%] items-center md:flex hidden">
-                <h2 className='lg:text-2xl text-xl font-rubik font-[600] tracking-tight uppercase text-white'>Daniel Poulton</h2>
+                <a href="/" className='lg:text-2xl text-xl font-rubik font-[600] tracking-tight uppercase text-white'>Daniel Poulton</a>
             </div>
 
             <div className="h-full w-full flex items-center justify-center space-x-3">

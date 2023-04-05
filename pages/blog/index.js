@@ -67,7 +67,7 @@ const Portfolio = ({
 
 
 export const getServerSideProps = async (pageContext) => {
-    const query = `*[_type == "blog"]{
+    const query = `*[_type == "blog"] | order(date desc){
         title,
         post,
         image,

@@ -41,15 +41,16 @@ const Home = ({
 
 
 export const getServerSideProps = async (pageContext) => {
-  const query = `*[_type == "portfolio"][0...3]{
+  const query = `*[_type == "portfolio"] | order(date desc) {
     title,
+    date,
     owninguser->{
       name,
     },
     thumbnail,
     images,
     slug
-  }`
+  }[0...3] `
   const portfoliodata = await sanityClient.fetch(query)
 
   return {

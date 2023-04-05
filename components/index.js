@@ -7,7 +7,8 @@ import MyLatestWork from "./home_page/MyLatestWork";
 import Header from "./utils/Header";
 import PortableText from "./utils/PortableText";
 import Contact from "./contact_form/ContactForm";
+import Resume from "./profile_page/Resume";
 
 
 
-export {Border, Introduction, AboutMe, WhatIDo, Links, MyLatestWork, Header, PortableText, Contact}
+export {Border, Introduction, AboutMe, WhatIDo, Links, MyLatestWork, Header, PortableText, Contact, Resume}

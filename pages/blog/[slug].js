@@ -143,6 +143,7 @@ export const getServerSideProps = async (pageContext) => {
   var owninguser = portfolio?.owninguser;
   var images = portfolio?.images;
   var fileinfo = portfolio?.FileInfo;
+  
 
   if (!raw_portfolio) {
     raw_portfolio = null

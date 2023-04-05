@@ -67,8 +67,9 @@ const Portfolio = ({
 
 
 export const getServerSideProps = async (pageContext) => {
-  const query = `*[_type == "portfolio"]{
+  const query = `*[_type == "portfolio"] | order(date desc) {
     title,
+    date,
     owninguser->{
       name,
     },
