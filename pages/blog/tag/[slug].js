@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
+import styles from '../../../styles/Home.module.css'
 import React from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header} from "../../components"
+import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header} from "../../../components"
 import Typewriter from 'typewriter-effect';
-import { sanityClient, urlFor } from "../../sanity"
+import { sanityClient, urlFor } from "../../../sanity"
 
 const Portfolio = ({
   portfoliodata,
@@ -36,7 +36,7 @@ const Portfolio = ({
           
         <div className='w-full h-full p-8'>
             <div className="h-full w-full flex items-center justify-center space-x-3 mb-16">
-              <a href={`/blog/`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
+                <a href={`/blog/`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
                   All
                 </a>
               {tags.map((tags) => (
@@ -81,13 +81,19 @@ const Portfolio = ({
 
 
 export const getServerSideProps = async (pageContext) => {
-    const query = `*[_type == "blog"] | order(date desc){
+    const pageSlug = pageContext.query.slug
+
+
+
+
+    const query = `*[_type == "blog" && tagslug == $pageSlug] | order(date desc) {
         title,
-        post,
+        tagslug,
         tags->{
-          name,
-          slug
+            name,
+            slug
         },
+        post,
         image,
         slug,
         date,
@@ -96,11 +102,14 @@ export const getServerSideProps = async (pageContext) => {
         },
         owninguser->{
           name,
-          image,
-          desc
+          image
         }
       }`
-  const portfoliodata = await sanityClient.fetch(query)
+  const portfoliodata = await sanityClient.fetch(query, { pageSlug })
+
+  console.log(pageSlug)
+  console.log(portfoliodata[0].tagslug)
+
 
   const tags_query = `*[_type == "tags"]{
     name,

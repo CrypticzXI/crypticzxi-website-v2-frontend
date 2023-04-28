@@ -6,7 +6,8 @@ import Typewriter from 'typewriter-effect';
 import { sanityClient, urlFor } from "../../sanity"
 
 const Portfolio = ({
-  portfoliodata
+  portfoliodata,
+  tags
 }) => {
   return (
     <div>
@@ -31,6 +32,16 @@ const Portfolio = ({
 
         <div className='h-full w-full flex lg:flex-row flex-col xl:px-40 lg:px-10 md:px-40 px-6 py-8 z-10'>
         <div className='w-full h-full p-8'>
+          <div className="h-full w-full flex items-center justify-center space-x-3 mb-16">
+            <a href={`/portfolio/`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
+                  All
+                </a>
+            {tags.map((tags) => (
+              <a href={`/portfolio/tag/${tags.slug.current}`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
+                {tags?.name}
+              </a>
+            ))}
+          </div>
             <div className='grid lg:grid-cols-2 w-full gap-8 grid-cols-1'>
 
             {portfoliodata.map((portfolio) => (
@@ -38,7 +49,7 @@ const Portfolio = ({
 
                     <div className="w-full h-full hidden mx-auto my-auto items-center justify-center z-20 absolute top-0 right-0 bottom-0 tracker-child left-0">
                         <div className="flex flex-col items-center justify-center mx-auto my-auto absolute top-0 right-0 bottom-0 left-0">
-                            <p className="font-rubik font-[400] text-sm text-center uppercase text-[#aaaaaa]">Web Design</p>
+                            <p className="font-rubik font-[400] text-sm text-center uppercase text-[#aaaaaa]">{portfolio.tags.name}</p>
                             <h2 className="text-white font-poppins font-[600] lg:text-base text-sm uppercase mt-2 mb-3 text-center">{portfolio.title}</h2>
                             <div className="border-b-4 border-secondary w-[4rem]"></div>
                         </div>
@@ -70,6 +81,10 @@ export const getServerSideProps = async (pageContext) => {
   const query = `*[_type == "portfolio"] | order(date desc) {
     title,
     date,
+    tags->{
+      name,
+      slug
+    },
     owninguser->{
       name,
     },
@@ -79,9 +94,16 @@ export const getServerSideProps = async (pageContext) => {
   }`
   const portfoliodata = await sanityClient.fetch(query)
 
+  const tags_query = `*[_type == "tags"]{
+    name,
+    slug,
+  }`
+const tags = await sanityClient.fetch(tags_query)
+
   return {
     props: {
-      portfoliodata
+      portfoliodata,
+      tags
     }
   }
 }

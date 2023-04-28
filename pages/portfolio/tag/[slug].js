@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
+import styles from '../../../styles/Home.module.css'
 import React from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header} from "../../components"
+import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header} from "../../../components"
 import Typewriter from 'typewriter-effect';
-import { sanityClient, urlFor } from "../../sanity"
+import { sanityClient, urlFor } from "../../../sanity"
 
 const Portfolio = ({
   portfoliodata,
@@ -36,11 +36,12 @@ const Portfolio = ({
           
         <div className='w-full h-full p-8'>
             <div className="h-full w-full flex items-center justify-center space-x-3 mb-16">
-              <a href={`/blog/`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
+
+                <a href={`/portfolio/`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
                   All
                 </a>
               {tags.map((tags) => (
-                <a href={`/blog/tag/${tags.slug.current}`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
+                <a href={`/portfolio/tag/${tags.slug.current}`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
                   {tags?.name}
                 </a>
               ))}
@@ -50,16 +51,16 @@ const Portfolio = ({
             <div className='grid lg:grid-cols-2 w-full gap-8 grid-cols-1'>
 
             {portfoliodata.map((portfolio) => (
-                <a href={`/blog/tag/${portfolio.slug.current}`} key={portfolio._key} className='w-full aspect-video rounded-lg border-secondary border-2 ring-2 tracker ring-primary group overflow-hidden relative'>
+                <a href={`/portfolio/${portfolio.slug.current}`} key={portfolio._key} className='w-full aspect-video rounded-lg border-secondary border-2 ring-2 tracker ring-primary group overflow-hidden relative'>
 
                     <div className="w-full h-full hidden mx-auto my-auto items-center justify-center z-20 absolute top-0 right-0 bottom-0 tracker-child left-0">
-                        <div className="flex flex-col items-center justify-center mx-auto my-auto absolute top-0 right-0 bottom-0 left-0 p-4">
+                        <div className="flex flex-col items-center justify-center mx-auto my-auto absolute top-0 right-0 bottom-0 left-0">
                             <p className="font-rubik font-[400] text-sm text-center uppercase text-[#aaaaaa]">{portfolio.tags.name}</p>
-                            <h2 className="text-white font-poppins font-[600] lg:text-base text-sm text-center uppercase mt-2 mb-3">{portfolio.title}</h2>
+                            <h2 className="text-white font-poppins font-[600] lg:text-base text-sm uppercase mt-2 mb-3 text-center">{portfolio.title}</h2>
                             <div className="border-b-4 border-secondary w-[4rem]"></div>
                         </div>
                     </div>
-                    <div className="transition-all w-full bg-center bg-cover aspect-video" style={{backgroundImage: `url(${urlFor(portfolio.image)})`}}></div>
+                    <div className="transition-all w-full bg-center bg-cover aspect-video" style={{backgroundImage: `url(${urlFor(portfolio.thumbnail.image)})`}}></div>
                 </a>
             ))}
 
@@ -81,26 +82,30 @@ const Portfolio = ({
 
 
 export const getServerSideProps = async (pageContext) => {
-    const query = `*[_type == "blog"] | order(date desc){
+    const pageSlug = pageContext.query.slug
+
+
+
+
+    const query = `*[_type == "portfolio" && tagslug == $pageSlug] | order(date desc) {
         title,
-        post,
         tags->{
-          name,
-          slug
+            name,
+            slug
         },
-        image,
-        slug,
         date,
-        portfolio->{
-          title
-        },
         owninguser->{
           name,
-          image,
-          desc
-        }
+        },
+        thumbnail,
+        images,
+        slug
       }`
-  const portfoliodata = await sanityClient.fetch(query)
+  const portfoliodata = await sanityClient.fetch(query, { pageSlug })
+
+  console.log(pageSlug)
+  console.log(portfoliodata[0].tagslug)
+
 
   const tags_query = `*[_type == "tags"]{
     name,
