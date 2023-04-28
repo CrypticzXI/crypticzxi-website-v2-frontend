@@ -3,7 +3,7 @@ import { formatSizeUnits } from "../../utils"
 import Router from 'next/router'
 import Head from 'next/head'
 import Typewriter from 'typewriter-effect';
-import {Header, Links, PortableText} from '../../components';
+import {Header, Links, PortableText2} from '../../components';
 import moment from 'moment'
 
 
@@ -66,7 +66,7 @@ const portfolio = ({
             </div>
             {portfolio.post?
               <div className="text-white font-rubik text-left md:text-base text-sm transition-all mt-10 break-words">
-                  <PortableText value={portfolio.post}/>
+                  <PortableText2 value={portfolio.post}/>
               </div>
             :null}
             {file?

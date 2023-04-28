@@ -5,10 +5,10 @@ import WhatIDo from "./home_page/WhatIDo";
 import Links from "./utils/Links";
 import MyLatestWork from "./home_page/MyLatestWork";
 import Header from "./utils/Header";
-import PortableText from "./utils/PortableText";
+import PortableText2 from "./utils/PortableText2";
 import Contact from "./contact_form/ContactForm";
 import Resume from "./profile_page/Resume";
 
 
 
-export {Border, Introduction, AboutMe, WhatIDo, Links, MyLatestWork, Header, PortableText, Contact, Resume}
+export {Border, Introduction, AboutMe, WhatIDo, Links, MyLatestWork, Header, PortableText2, Contact, Resume}

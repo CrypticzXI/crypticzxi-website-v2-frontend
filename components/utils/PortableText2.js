@@ -2,7 +2,7 @@
 import {PortableText} from '@portabletext/react'
 import { urlFor } from "../../sanity"
 
-const myPortableTextComponents = {
+  const myPortableTextComponents = {
     types: {
       image: ({value}) => <img className='max-w-xl' src={urlFor(value)} />,
       callToAction: ({value, isInline}) =>
@@ -47,6 +47,7 @@ const myPortableTextComponents = {
   }
   
   const PortableText2 = (props) => {
+    console.log(props)
     return <PortableText value={props.value} components={myPortableTextComponents} />
   }
 
