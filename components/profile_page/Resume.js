@@ -1,4 +1,4 @@
-import {PortableText} from "../../components"
+import {PortableText2} from "../../components"
 import { urlFor } from "../../sanity"
 const Resume = ({ data }) => {
     return (
@@ -7,7 +7,7 @@ const Resume = ({ data }) => {
             <div className='border-b-[1px] border-primary lg:w-[18.5rem] w-[15.4rem] mt-4'></div>
             <h2 className="mt-10 lg:text-2xl text-xl font-poppins font-[600] uppercase text-secondary">A Bit about me...</h2>
             <div className="text-white font-rubik text-left md:text-base text-sm transition-all break-words mt-4">
-                <PortableText value={data.desc}/>
+                <PortableText2 value={data.desc}/>
             </div>
 
             {data.skills?
