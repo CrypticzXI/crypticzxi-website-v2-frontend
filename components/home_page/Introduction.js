@@ -22,7 +22,7 @@ const Introduction = ({ properties }) => {
         </div>
       </div>
       <div className='w-full h-full flex my-auto items-center justify-center z-[999]'>
-        <div className='transition-all w-full max-w-lg bg-center bg-cover aspect-square rounded-full shadow-2xl bg-[url(../public/SVG/Asset-1.svg)]'></div>
+        
       </div>
       </div>
     )
