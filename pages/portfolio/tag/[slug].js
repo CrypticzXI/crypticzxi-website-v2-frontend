@@ -1,10 +1,5 @@
-import Head from 'next/head'
-import styles from '../../../styles/Home.module.css'
 import React from "react";
-import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header} from "../../../components"
-import Typewriter from 'typewriter-effect';
+import {Header} from "../../../components"
 import { sanityClient, urlFor } from "../../../sanity"
 
 const Portfolio = ({
@@ -47,6 +42,13 @@ const Portfolio = ({
               ))}
       
       
+            </div>
+            <div className="w-full h-full flex flex-col items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-secondary">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h2 className="text-center text-white font-poppins font-bold text-2xl mt-3">Nothing Found!</h2>
+
             </div>
             <div className='grid lg:grid-cols-2 w-full gap-8 grid-cols-1'>
 
@@ -104,7 +106,7 @@ export const getServerSideProps = async (pageContext) => {
   const portfoliodata = await sanityClient.fetch(query, { pageSlug })
 
   console.log(pageSlug)
-  console.log(portfoliodata[0].tagslug)
+  console.log(portfoliodata[0])
 
 
   const tags_query = `*[_type == "tags"]{

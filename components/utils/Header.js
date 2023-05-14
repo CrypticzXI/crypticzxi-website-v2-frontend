@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <div className='w-full h-20 bg-secondarybackground fixed z-[999] flex xl:px-20 lg:px-20 md:px-10 px-8 border-b-[1px] border-primary'>
+        <div className='w-full h-20 bg-gray-900 fixed z-[1000] flex xl:px-20 lg:px-20 md:px-10 px-8 border-b-[1px] border-primary'>
             <div className="h-full w-[40%] items-center md:flex hidden">
                 <a href="/" className='lg:text-2xl text-xl font-rubik font-[600] tracking-tight uppercase text-white'>Daniel Poulton</a>
             </div>

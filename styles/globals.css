@@ -181,3 +181,11 @@ ul li {
   list-style-type: circle;
 }
 
+.break-sentences-up p {
+  margin-bottom: 2rem;
+}
+
+.break-sentences-up p :last-child {
+  margin-bottom: 0rem;
+}
+

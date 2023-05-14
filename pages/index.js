@@ -12,12 +12,8 @@ const Home = ({
 }) => {
   return (
     <div>
-
-
-
-
-      <div className='bg-background w-screen h-screen min-h-screen overflow-x-hidden'>
-
+      <div className='bg-gray-900 w-screen h-screen min-h-screen overflow-x-hidden'>
+        
         <Header />
         <Introduction />
         <Border />
@@ -28,10 +24,6 @@ const Home = ({
         <MyLatestWork portfoliodata={portfoliodata}/>
         <Border />
         <Contact></Contact>
-
-
-
-
 
       </div>
     </div>

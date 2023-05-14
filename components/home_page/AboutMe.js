@@ -11,24 +11,17 @@ const AboutMe = ({ properties }) => {
       end: 1000
     });
     return (
-        <div className='my-auto min-h-screen max-h-screen flex items-center relative'>
-        <div className='w-full h-full absolute flex items-center justify-center blur-2xl opacity-20'>
-
-          <div className='h-72 aspect-square bg-primary rounded-full left-[10rem] top-[10rem] absolute anim-1'></div>
-          <div className='h-72 aspect-square bg-required rounded-full left-[35rem] top-[35rem] absolute anim-2'></div>
-          <div className='h-36 aspect-square bg-secondary rounded-full left-[60rem] top-[15rem] absolute anim-3'></div>
+      <div className='flex xl:flex-row flex-col min-h-screen xl:px-40 lg:px-36 md:px-20 sm:px-12 px-8 gap-16 relative'>
+        <div className='w-full h-full top-0 bottom-0 left-0 right-0 absolute z-[998] bg-gradient-to-br opacity-100 from-gray-900 to-[rgba(10,10,15,0.7)]'>
+        </div>
+        <div className='w-full h-full top-0 bottom-0 left-0 right-0 absolute z-[997] bg-cover bg-center bg-[url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Forig00.deviantart.net%2Fc91b%2Ff%2F2016%2F366%2F8%2F8%2Fhd_low_poly_wallpaper__cyan__by_bluhurr-datpabb.jpg&f=1&nofb=1&ipt=d90a0f54a28e88d548194d969b27cd697b9685567bd2d60feda1632aeb029622&ipo=images)]'>
         </div>
 
-        <div className='z-10 h-full w-full grid lg:grid-cols-2 lg:grid-rows-1 grid-rows-1 grid-cols-1 xl:px-40 lg:px-20 md:px-20 px-4'>
-
-          <div className='w-full aspect-square xl:px-40 lg:px-20 md:px-20 px-8 items-center row-start-1 row-end-1 lg:flex hidden'>
-            <div className='w-full p-8 flex items-center justify-center lg:items-center lg:justify-end transition-all'>
-                <div className='transition-all w-full bg-center bg-cover aspect-square bg-[url(../public/SVG/Asset-1.svg)]'></div>
-            </div>
-          </div>
-
-
-          <div className='w-full lg:p-8 aspect-square flex items-center justify-start row-start-2 row-end-2 lg:row-start-1 lg:row-end-1'>
+        <div className='w-full h-full flex my-auto items-center justify-center z-[999]'>
+          <div className='transition-all w-full max-w-lg bg-center bg-cover aspect-square rounded-full shadow-2xl bg-[url(../public/SVG/Asset-1.svg)]'></div>
+        </div>
+        <div className='w-full h-full flex my-auto items-center justify-center z-[999]'>
+          <div className='md:w-[80%] w-full flex mt-7 space-x-1'>
             <div className='flex flex-col'>
               <h2 className='lg:text-4xl text-2xl font-rubik font-[600] tracking-tight uppercase text-secondary'>About Me</h2>
               <div className='flex space-x-3 lg:text-2xl text-lg font-rubik uppercase text-white font-[500] lg:mt-7 mt-3'>
