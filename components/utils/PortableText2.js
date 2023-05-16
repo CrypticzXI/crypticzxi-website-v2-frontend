@@ -5,6 +5,7 @@ import { urlFor } from "../../sanity"
   const myPortableTextComponents = {
     types: {
       image: ({value}) => <img className='max-w-xl' src={urlFor(value)} />,
+      iframe: ({value}) => <iframe src=value />,
       callToAction: ({value, isInline}) =>
         isInline ? (
           <a href={value.url}>{value.text}</a>
