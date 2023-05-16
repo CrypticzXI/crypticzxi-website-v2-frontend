@@ -11,8 +11,8 @@ import { urlFor } from "../../sanity"
         ) : (
           <div className="">{value.text}</div>
         ),
-        rawHTML: ({ node }) => (
-          <div dangerouslySetInnerHTML={{ __html: node.html }} />
+        rawHTML: ({ value }) => (
+          <div dangerouslySetInnerHTML={{ __html: value.html }} />
         ),
     },
     list: {
