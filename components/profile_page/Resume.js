@@ -1,8 +1,9 @@
 import {PortableText2} from "../../components"
 import { urlFor } from "../../sanity"
 const Resume = ({ data }) => {
+
     return (
-        <div className="h-full w-full xl:px-40 lg:px-20 md:px-20 px-4">
+        <div className="h-full w-full xl:px-40 lg:px-20 md:px-20 px-4 my-20">
             <h2 className='lg:text-4xl text-2xl font-rubik font-[600] tracking-tight uppercase text-white'>About Me</h2>
             <div className='border-b-[1px] border-primary lg:w-[18.5rem] w-[15.4rem] mt-4'></div>
             <h2 className="mt-10 lg:text-2xl text-xl font-poppins font-[600] uppercase text-secondary">A Bit about me...</h2>
@@ -37,7 +38,7 @@ const Resume = ({ data }) => {
 
                 {data.software.map((software) => (
                     <div className="bg-secondarybackground px-4 py-2 max-h-14 h-full rounded-lg mr-[8px] my-2 transition-all flex items-center md:text-base text-sm">
-                        <img className="w-auto h-6 mr-2" src={urlFor(software.image)} />
+                        <img className="w-auto h-6 mr-2" src={urlFor(software.image).width(24).url()} />
                         {software.name}
                     </div>
                 ))}

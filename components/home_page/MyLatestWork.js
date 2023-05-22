@@ -25,7 +25,7 @@ const MyLatestWork = ({ portfoliodata }) => {
                 </div>
 
                 {portfoliodata.map((portfolio) => (
-                    <a href={`/portfolio/${portfolio.slug.current}`} className='w-full aspect-video rounded-lg border-secondary border-2 ring-2 tracker ring-primary group overflow-hidden relative'>
+                    <a href={`/portfolio/${portfolio.slug.current}`} className='w-full aspect-video rounded-lg border-background border-2 ring-2 tracker ring-secondarybackground group overflow-hidden relative'>
 
                         <div className="w-full h-full hidden mx-auto my-auto items-center justify-center z-20 absolute top-0 right-0 bottom-0 tracker-child left-0">
                             <div className="flex flex-col items-center justify-center mx-auto my-auto absolute top-0 right-0 bottom-0 left-0">
