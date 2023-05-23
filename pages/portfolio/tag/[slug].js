@@ -1,7 +1,6 @@
 import React from "react";
 import {Header} from "../../../components"
 import { sanityClient, urlFor } from "../../../sanity"
-
 const Portfolio = ({
   portfoliodata,
   tags
@@ -30,8 +29,8 @@ const Portfolio = ({
         <div className='h-full w-full flex lg:flex-row flex-col xl:px-40 lg:px-10 md:px-40 px-6 py-8 z-10'>
           
         <div className='w-full h-full p-8'>
-            <div className="h-full w-full flex items-center justify-center space-x-3 mb-16">
 
+            <div className="h-full w-full flex items-center justify-center space-x-3 mb-16">
                 <a href={`/portfolio/`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-1 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
                   All
                 </a>
@@ -40,16 +39,17 @@ const Portfolio = ({
                   {tags?.name}
                 </a>
               ))}
-      
-      
             </div>
-            <div className="w-full h-full flex flex-col items-center justify-center">
+
+            {!portfoliodata[0]?.slug ?
+              <div className="w-full h-full flex flex-col items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-secondary">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <h2 className="text-center text-white font-poppins font-bold text-2xl mt-3">Nothing Found!</h2>
 
-            </div>
+              </div>:null
+            }
             <div className='grid lg:grid-cols-2 w-full gap-8 grid-cols-1'>
 
             {portfoliodata.map((portfolio) => (
@@ -105,8 +105,11 @@ export const getServerSideProps = async (pageContext) => {
       }`
   const portfoliodata = await sanityClient.fetch(query, { pageSlug })
 
-  console.log(pageSlug)
-  console.log(portfoliodata[0])
+  var portfoliodataaaaa = portfoliodata;
+
+  if (!portfoliodataaaaa) {
+    var portfoliodta = null;
+  }
 
 
   const tags_query = `*[_type == "tags"]{
@@ -114,10 +117,10 @@ export const getServerSideProps = async (pageContext) => {
     slug,
   }`
 const tags = await sanityClient.fetch(tags_query)
-
+console.log(portfoliodata)
   return {
     props: {
-      portfoliodata,
+      portfoliodata: portfoliodataaaaa,
       tags
     }
   }

@@ -3,7 +3,7 @@ import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div> 
+    <div className='bg-gray-900'> 
       <Head>
         {/* preconnect scripts... */}
         <title>Daniel Poulton - Portfolio</title>
