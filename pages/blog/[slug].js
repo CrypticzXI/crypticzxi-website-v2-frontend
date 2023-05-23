@@ -45,11 +45,11 @@ const portfolio = ({
           </button>
         </div>
 
-        <div className='flex xl:flex-row flex-col min-h-screen xl:px-40 lg:px-36 md:px-20 sm:px-12 pt-16 px-8 gap-16 relative pb-20'>
+        <div className='flex xl:flex-row flex-col min-h-screen xl:px-40 lg:px-36 md:px-20 sm:px-12 pt-16 gap-16 relative pb-20'>
           <div className='w-full h-full top-0 bottom-0 left-0 right-0 absolute z-[998] bg-gradient-to-br opacity-100 from-gray-900 to-[rgba(10,10,15,0.2)]'></div>
           <div className='w-full h-full top-0 bottom-0 left-0 right-0 absolute z-[997] bg-cover bg-center bg-[url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Flow-poly-city-block_a2tuaGWUmZqaraWkpJRmbmdlrWZlbWU.jpg&f=1&nofb=1&ipt=63731ca74bc38c5fcf11558939b9d434bd47bb0c4e194c1a2facad5593c0b49e&ipo=images)]'></div>
 
-          <div className="w-full flex flex-col h-full bg-secondarybackground rounded-2xl z-[999] mt-20 shadow-xl">
+          <div className="w-full flex flex-col h-full bg-secondarybackground lg:rounded-2xl z-[999] md:mt-20 shadow-xl">
 
                 <div className="IMAGE-MEDIA w-full h-72 rounded-t-2xl overflow-hidden flex items-center justify-center">
                   {blog.image ? 
@@ -58,7 +58,7 @@ const portfolio = ({
                   }
                 </div>
 
-                <div className="TEXT BOX h-full w-full p-8 px-12">
+                <div className="TEXT BOX h-full w-full p-8 lg:px-12">
 
                   <div className="w-full h-full flex">
                     <div className="">
@@ -68,7 +68,7 @@ const portfolio = ({
                         { blog.owninguser ? 
                         <div className="flex items-center space-x-3">
                           <img className="h-12 rounded-full" src={urlFor(blog?.owninguser?.image)}></img>
-                          <p className="font-rubik text-white ">{blog?.owninguser?.name}</p>
+                          <p className="font-rubik text-white aspect-video">{blog?.owninguser?.name}</p>
                         </div> :
                         <p className="font-rubik text-white">Anonymous</p>
                         }
