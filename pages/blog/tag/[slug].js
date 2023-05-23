@@ -47,14 +47,20 @@ const Portfolio = ({
         <div className='flex flex-col w-full h-full mt-20'>
           <div className='w-full h-full z-[999]'>
             <div className="h-full w-full flex items-center justify-center space-x-3 mb-16">
-              <a href={`/blog/`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-2 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
+
+              <div className="text-white font-rubik block box-border break-words leading-[45px] w-full transition-all mt-5">
+
+              <a href={`/blog/`} className='border-primary hover:border-secondary mx-2 focus:border-secondary text-white font-rubik whitespace-nowrap py-[0.35rem] md:px-6 sm:px-4 px-2 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
                   All
-                </a>
+              </a>
+
               {tags.map((tags) => (
-                <a href={`/blog/tag/${tags.slug.current}`} className='border-primary hover:border-secondary focus:border-secondary text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-2 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
+                <a href={`/blog/tag/${tags.slug.current}`} className='border-primary mx-2 hover:border-secondary focus:border-secondary whitespace-nowrap text-white font-rubik py-[0.35rem] md:px-6 sm:px-4 px-2 rounded-full transition-all md:text-sm text-xs bg-gradient-to-r hover:text-secondary focus:text-secondary border-2 hover:bg-transparent focus:bg-transparent'>
                   {tags?.name}
                 </a>
               ))}
+
+              </div>
       
       
             </div>
