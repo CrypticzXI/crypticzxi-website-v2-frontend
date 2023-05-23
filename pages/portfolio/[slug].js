@@ -87,7 +87,7 @@ const portfolio = ({
             <Links />
           </div>
       </div>
-
+      {images ?
       <div className='grid lg:grid-cols-2 w-full gap-8 grid-cols-1 p-8 mt-10 xl:px-40 lg:px-20 md:px-20'>
 
         <div onClick={() => {document.getElementById("canvas").style.display = "flex"; document.getElementById("canvas-img").src = `${urlFor(portfolio.thumbnail.image)}`}} className='w-full aspect-video rounded-lg border-secondary border-2 ring-2 tracker ring-primary group overflow-hidden relative cursor-pointer'>
@@ -100,7 +100,8 @@ const portfolio = ({
             </div>
         ))}
 
-        </div>
+      </div> : null}
+
 
 
 
