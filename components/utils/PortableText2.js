@@ -4,7 +4,7 @@ import { urlFor } from "../../sanity"
 
   const myPortableTextComponents = {
     types: {
-      image: ({value}) => <img className='max-w-xl' src={urlFor(value)} />,
+      image: ({value}) => <img className='max-w-xl' onClick={() => {document.getElementById("canvas").style.display = "flex"; document.getElementById("canvas-img").src = `${urlFor(value)}`}} src={urlFor(value)} />,
       callToAction: ({value, isInline}) =>
         isInline ? (
           <a href={value.url}>{value.text}</a>
