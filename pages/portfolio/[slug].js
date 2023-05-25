@@ -48,7 +48,7 @@ const portfolio = ({
 
         <div className="w-full flex flex-col h-full bg-secondarybackground lg:rounded-2xl z-[999] md:mt-20 shadow-xl">
 
-              {portfolio.thumbnail.image ?
+              {portfolio.thumbnail ?
               <div className="IMAGE-MEDIA w-full h-72 rounded-t-2xl overflow-hidden flex items-center justify-center bg-center bg-cover" style={{backgroundImage: `url(${urlFor(portfolio.thumbnail.image)})`}}></div> :
               <div className="IMAGE-MEDIA w-full h-72 rounded-t-2xl overflow-hidden flex items-center justify-center bg-center bg-cover" style={{backgroundImage: `url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Flow-poly-city-block_a2tuaGWUmZqaraWkpJRmbmdlrWZlbWU.jpg&f=1&nofb=1&ipt=63731ca74bc38c5fcf11558939b9d434bd47bb0c4e194c1a2facad5593c0b49e&ipo=images)`}}></div>
               }
@@ -86,8 +86,8 @@ const portfolio = ({
                 {portfolio.images ? 
                   <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 transition-all">
                     {portfolio.images.map((image) => (
-                        <div onClick={() => {document.getElementById("canvas").style.display = "flex"; document.getElementById("canvas-img").src = `${urlFor(image)}`}} className='w-full aspect-video rounded-lg cursor-pointer border-secondary border-2 ring-2 tracker ring-primary group overflow-hidden relative'>
-                            <div className="transition-all w-full bg-center bg-cover aspect-video" style={{backgroundImage: `url(${urlFor(image)})`}}></div>
+                        <div onClick={() => {document.getElementById("canvas").style.display = "flex"; document.getElementById("canvas-img").src = `${urlFor(image.image)}`}} className='w-full aspect-video rounded-lg cursor-pointer border-secondary border-2 ring-2 tracker ring-primary group overflow-hidden relative'>
+                            <div className="transition-all w-full bg-center bg-cover aspect-video" style={{backgroundImage: `url(${urlFor(image.image)})`}}></div>
                         </div>
                     ))}
                   </div>
