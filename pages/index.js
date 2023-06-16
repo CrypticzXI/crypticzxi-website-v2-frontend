@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import React from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header, Contact} from "../components"
+import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header, Contact, Timeline} from "../components"
 import Typewriter from 'typewriter-effect';
 import { sanityClient, urlFor } from "../sanity"
 
