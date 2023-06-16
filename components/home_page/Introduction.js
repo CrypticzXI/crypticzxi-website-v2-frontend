@@ -19,7 +19,7 @@ const Introduction = ({ properties }) => {
       </svg>
       </div>
       
-      <div className='w-full h-full flex my-auto items-center justify-center z-[999]'>
+      <div className='w-full h-full flex my-auto items-center justify-center z-[999] md:py-0 py-5'>
         <div className='flex flex-col'>
           <h2 className='lg:text-4xl text-3xl font-rubik font-[600] tracking-tight uppercase text-white'>Daniel Poulton</h2>
           <div className='border-b-[1px] border-primary lg:w-[18.5rem] w-[15.4rem] mt-2'></div>
@@ -31,7 +31,7 @@ const Introduction = ({ properties }) => {
           <Links />
         </div>
       </div>
-      <div className='w-full h-full flex my-auto items-center justify-center z-[999]'>
+      <div className='w-full h-full flex my-auto items-center justify-center z-[999] md:py-0 py-5'>
         
       </div>
       </div>

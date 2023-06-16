@@ -29,7 +29,7 @@ const Contact = ({ properties }) => {
 
 
           <div className='w-full lg:p-8 aspect-square flex items-center justify-start row-start-2 row-end-2 lg:row-start-1 lg:row-end-1'>
-            <div className='flex flex-col w-full '>
+            <div className='flex flex-col w-full md:py-0 py-5'>
               <h2 className='lg:text-4xl text-lg font-rubik font-[600] tracking-tight uppercase text-secondary text-center'>Contact Me</h2>
               <form method="POST" action="https://formspree.io/f/mpzeywov" className="text-white font-rubik w-full flex flex-col space-y-5 mt-7">
 
