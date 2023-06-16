@@ -1,6 +1,9 @@
 
 import { PortableText } from '@portabletext/react'
 import { urlFor } from "../../sanity"
+import React from 'react';
+import { Document, Page } from 'react-pdf';
+import { pdfjs } from 'react-pdf';
 
 const myPortableTextComponents = {
   types: {
