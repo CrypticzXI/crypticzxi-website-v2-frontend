@@ -1,11 +1,9 @@
 
 import { PortableText } from '@portabletext/react'
-import { urlFor } from "../../sanity"
+import { urlFor, GetFileUrl } from "../../sanity"
+import { Document, Page } from '@react-pdf/renderer';
 import React from 'react';
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const myPortableTextComponents = {
   types: {
@@ -20,10 +18,8 @@ const myPortableTextComponents = {
       <div dangerouslySetInnerHTML={{ __html: value.html }} />
     ),
     pdf: ({ value }) => (
-      <div className="pdf-container">
-        <Document file={urlFor(value.asset)}>
-          <Page pageNumber={1} />
-        </Document>
+      <div className="pdf-container aspect-[1/1.4142] h-full w-full mb-16">
+        <iframe className='w-auto h-full aspect-[1/1.4142]' src={GetFileUrl(value).url}></iframe>
       </div>
     )
     },
