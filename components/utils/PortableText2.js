@@ -27,7 +27,7 @@ const myPortableTextComponents = {
             <Page pageNumber={1} />
           </Document>
         </div>
-      );
+      )
     },
     list: {
       bullet: ({ children }) => <ul className="pl-10">{children}</ul>,
