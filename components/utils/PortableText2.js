@@ -19,15 +19,13 @@ const myPortableTextComponents = {
     rawHTML: ({ value }) => (
       <div dangerouslySetInnerHTML={{ __html: value.html }} />
     ),
-    pdf: ({ node }) => {
-      const { file } = node;
-      return (
-        <div className="pdf-container">
-          <Document file={urlFor(file).url()}>
-            <Page pageNumber={1} />
-          </Document>
-        </div>
-      )
+    pdf: ({ value }) => (
+      <div className="pdf-container">
+        <Document file={urlFor(value).url()}>
+          <Page pageNumber={1} />
+        </Document>
+      </div>
+    )
     },
     list: {
       bullet: ({ children }) => <ul className="pl-10">{children}</ul>,
