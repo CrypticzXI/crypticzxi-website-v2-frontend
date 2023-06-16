@@ -21,7 +21,7 @@ const myPortableTextComponents = {
     ),
     pdf: ({ value }) => (
       <div className="pdf-container">
-        <Document file={urlFor(value.file).url()}>
+        <Document file={urlFor(value)}>
           <Page pageNumber={1} />
         </Document>
       </div>
