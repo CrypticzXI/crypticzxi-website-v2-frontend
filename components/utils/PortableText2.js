@@ -5,6 +5,8 @@ import React from 'react';
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from 'react-pdf';
 
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 const myPortableTextComponents = {
   types: {
     image: ({ value }) => <img className='max-w-xl' onClick={() => { document.getElementById("canvas").style.display = "flex"; document.getElementById("canvas-img").src = `${urlFor(value)}` }} src={urlFor(value)} />,
