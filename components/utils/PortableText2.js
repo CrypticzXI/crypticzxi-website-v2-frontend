@@ -20,10 +20,10 @@ const myPortableTextComponents = {
       <div dangerouslySetInnerHTML={{ __html: value.html }} />
     ),
     pdf: ({ value }) => (
-      
+      let { file } = value;
       <div className="pdf-container">
-        <Document file={urlFor(value)}>
-          {console.log(urlFor(value))}
+        <Document file={urlFor(file)}>
+          {console.log(urlFor(file))}
           <Page pageNumber={1} />
         </Document>
       </div>
