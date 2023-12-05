@@ -1,9 +1,5 @@
-import { PortableText2 } from ".."
 import { useEffect, useState } from 'react';
-import { urlFor } from "../../sanity"
 import { Arced } from "../Gauges/arced";
-import IllustratorLogo from "../../public/SVG/IllUstrator.svg"
-import Image from "next/image";
 
 const Resume = () => {
   const [AboutMe, setAboutMe] = useState([]);
