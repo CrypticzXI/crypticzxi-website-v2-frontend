@@ -1,5 +1,5 @@
 import React from "react";
-import {Introduction, Border, Header, Contact, Resume} from "../../components"
+import { Introduction, Border, Header, Contact, Resume } from "../../components"
 import { sanityClient } from "../../sanity"
 
 const Home = ({
@@ -8,15 +8,17 @@ const Home = ({
   return (
     <div>
       <div className='bg-background overflow-hidden'>
+        <Border />
         <Header />
-        <Introduction /> 
+        <Introduction />
         <Border />
         <Resume data={portfoliodata.aboutme} />
         <Border />
         <Contact></Contact>
+        <Border />
       </div>
     </div>
-    
+
   )
 }
 

@@ -1,0 +1,35 @@
+{
+    "Bio": [
+        "Greetings, I'm Daniel, an 18-year-old resident of the United Kingdom. My journey with computers commenced at the tender age of 10, and since then, I've immersed myself in the world of technology. My passion for game development was ignited when I discovered the Unity engine, prompting me to adapt my software choices to align with my creative pursuits. For the past seven years, I have honed my skills using Unreal Engine, complemented by proficiency in software applications such as Blender and Substance Painter.",
+        "I am eager to further refine my abilities in Blender, with a specific focus on creating optimized models while maintaining a high level of detail. Additionally, I aspire to expand my proficiency in C++ programming, thereby enriching my skill set.",
+        "These skills and experiences have paved the way for me to enroll in college, where I successfully completed a Level 3 Diploma in Creative Media (Games Design) with a Merit grade. Currently, I am on track to attain my Extended Diploma in Creative Media, which will serve as a stepping stone towards my educational journey. My ultimate goal is to pursue a Bachelor of Arts (Honors) degree in Computer Games Technology at the university level, thus furthering my dedication to the field of game development"
+    ],
+    "Skills": [
+        "Full-Stack Game Development", "3D Modelling", "Full-Stack Web Development", "Extended Python Knowledge", "Extended JavaScript Knowledge", "Well Developed Graphics Design Artist", "Experienced UX Design"
+    ],
+    "Software": [
+        "Unreal Engine", "Blender", "Next.js", "TailwindCSS", "Google Firebase", "Sanity.io", "Adobe Illustrator", "Adobe Photoshop", "Adobe Premiere Pro", "JetBrains PyCharm", "JetBrains Rider"
+    ],
+    "Strengths": [
+        {
+            "Image": "./SVG/Blender.svg",
+            "Alt": "Blender Logo",
+            "Value": 90
+        },
+        {
+            "Image": "./SVG/Illustrator.svg",
+            "Alt": "Illustrator Logo",
+            "Value": 85
+        },
+        {
+            "Image": "./SVG/Photoshop.svg",
+            "Alt": "Photoshop Logo",
+            "Value": 75
+        },
+        {
+            "Image": "./SVG/Painter.svg",
+            "Alt": "Substance Painter Logo",
+            "Value": 65
+        }
+    ]
+}
