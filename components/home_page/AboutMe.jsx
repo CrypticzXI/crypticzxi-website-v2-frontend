@@ -13,14 +13,14 @@ const AboutMe = ({ properties }) => {
       end: 1000
     });
     return (
-      <div className='flex xl:flex-row flex-col min-h-screen xl:px-40 lg:px-36 md:px-20 sm:px-12 px-8 gap-16 relative'>
+      <div className='flex lg:flex-row flex-col xl:px-40 lg:px-20 md:px-20 sm:px-12 px-8 py-16 relative'>
         <div className='w-full h-full top-0 bottom-0 left-0 right-0 absolute z-[998] bg-gradient-to-br from-gray-700 to-[rgba(10,10,15,0.7)]'>
         </div>
 
         <div className='w-full h-full flex my-auto items-center justify-center z-[999] md:py-0 py-5'>
-          <div className="transition-all w-full max-w-md rounded-full">
+          <div className="transition-all lg:max-w-md max-w-[15rem] w-full rounded-full">
             
-            <Image className='transition-all w-full max-w-md' src={Daniel} />
+            <Image className='transition-all w-full lg:max-w-md max-w-[15rem]' src={Daniel} />
           </div>
         </div>
         <div className='w-full h-full flex my-auto items-center justify-center z-[999] md:py-0 py-5'>

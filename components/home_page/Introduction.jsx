@@ -7,8 +7,7 @@ import Logo from '../../public/Logo.svg';
 const Introduction = ({ properties }) => {
 	return (
 
-		<div className='transition-all flex md:flex-row flex-col min-h-screen xl:px-40 lg:px-36 md:px-20 sm:px-12 px-8 gap-16 relative'>
-			<Image class='w-full h-full top-0 bottom-0 left-0 right-0 absolute z-[995]' alt='Buildings' src={Buildings} />
+		<div className='transition-all flex md:flex-row flex-col min-h-screen xl:px-40 lg:px-36 md:px-20 sm:px-12 px-8 gap-16 relative bg-cover bg-center' style={{backgroundImage: `url(${Buildings.src})`}}>
 			<div className='w-full h-full top-0 bottom-0 left-0 right-0 absolute z-[998] bg-gradient-to-br opacity-100 from-gray-900 to-[rgba(10,10,15,0.2)]'>
 			</div>
 

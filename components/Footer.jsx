@@ -3,9 +3,9 @@ import Logo from '../public/Logo.svg';
 
 const Footer = () => {
     return (
-        <div className='h-72 w-full flex bg-gray-500'>
+        <div className='lg:h-72 w-full flex flex-col lg:flex-row bg-gray-500'>
 
-            <div className='left h-72 w-[50%] flex flex-col p-16 justify-center'>
+            <div className='left lg:h-72 lg:w-[50%] w-full flex flex-col lg:p-16 p-8 justify-center'>
                 < a href="/" className='lg:text-2xl text-xl font-rubik font-[600] tracking-tight uppercase text-white' >
                     <Image alt='Daniel Poulton Logo' className='w-60' src={Logo} />
                 </a >
@@ -14,7 +14,7 @@ const Footer = () => {
                 <p className='font-poppins text-white text-sm mt-5'>© Copyright Daniel Poulton, 2005 - 2023</p>
             </div>
 
-            <div className='left h-72 w-[50%] flex flex-col p-16 justify-center'>
+            <div className='left lg:h-72 lg:w-[50%] w-full flex flex-col lg:p-16 p-8 justify-center'>
                 <p className='font-poppins text-white text-md font-bold'>Quick Links</p>
                 <div className='flex space-x-10'>
                     <div className='flex flex-col'>

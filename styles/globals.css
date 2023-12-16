@@ -202,3 +202,11 @@ ul li {
 .animate-bounce-600ms {
   animation: bounce 600ms infinite;
 }
+
+.dropdown:hover .dropdown-content {
+  display: 'flex';
+}
+
+.dropdown:focus .dropdown-content {
+  display: 'flex';
+}

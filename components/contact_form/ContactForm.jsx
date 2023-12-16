@@ -14,14 +14,14 @@ const Contact = ({ properties }) => {
     end: 1000
   });
   return (
-    <div className="w-screen h-screen flex xl:px-40 lg:px-36 md:px-20 sm:px-12 px-8">
-      <div className="w-[50%] h-full py-16 z-[999]">
-        <div className=" bg-gray-700 rounded-2xl w-full h-full p-8 flex flex-col items-center">
+    <div className="w-screen h-screen flex xl:px-40 lg:px-36 md:px-20 sm:px-12">
+      <div className="lg:w-[50%] w-full h-full py-16 z-[999]">
+        <div className=" sm:bg-gray-700 transition-all rounded-2xl w-full h-full p-8 flex flex-col items-center">
           <h2 className="font-poppins text-2xl font-bold text-white tracking-wide">Contact Me</h2>
           <div className='border-b-[1px] border-primary lg:w-[18.5rem] w-[15.4rem] mt-4'></div>
 
 
-          <form method="POST" action="https://formspree.io/f/mpzeywov" className="text-white font-rubik w-full flex flex-col space-y-5 mt-8 px-12">
+          <form method="POST" action="https://formspree.io/f/mpzeywov" className="text-white font-rubik w-full flex flex-col space-y-5 mt-8 lg:px-12">
           
               <div className="flex-col w-full">
                   <p className="mb-2 text-sm text-left">Your Name <span className="text-required">*</span></p>
@@ -50,7 +50,7 @@ const Contact = ({ properties }) => {
           <Social_Icons />
         </div>
       </div>
-      <div className="w-[50%] h-full py-16 z-[999] flex items-center justify-center">
+      <div className="w-[50%]  h-full py-16 z-[999] hidden lg:flex items-center justify-center">
         <Image className='transition-all w-full max-w-md' src={Daniel} />  
       </div>
     </div>
