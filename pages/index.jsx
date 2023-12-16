@@ -1,11 +1,8 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import React from "react";
-import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import {Introduction, Border, AboutMe, WhatIDo, Links, MyLatestWork, Header, Contact, Timeline} from "../components"
-import Typewriter from 'typewriter-effect';
-import { sanityClient, urlFor } from "../sanity"
+import { sanityClient } from "../sanity"
+import RootBar_Top from '../components/utils/RootBar_Top';
+import Footer from "../components/Footer";
 
 const Home = ({
   portfoliodata
@@ -19,11 +16,11 @@ const Home = ({
         <Border />
         <AboutMe />
         <Border />
-        <WhatIDo />
-        <Border />
         <MyLatestWork portfoliodata={portfoliodata}/>
         <Border />
         <Contact></Contact>
+        <RootBar_Top/>
+        <Footer />
 
       </div>
     </div>
@@ -51,5 +48,7 @@ export const getServerSideProps = async (pageContext) => {
     }
   }
 }
+
+// TODO Make this function moduar at some point
 
 export default Home
